@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class TriggerProjectile : MonoBehaviour
@@ -12,8 +11,6 @@ public class TriggerProjectile : MonoBehaviour
     [SerializeField] GameObject projectile6;
     [SerializeField] GameObject projectile7;
 
-    bool fired = false;
-
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -26,11 +23,7 @@ public class TriggerProjectile : MonoBehaviour
             projectile5.SetActive(true);
             projectile6.SetActive(true);
             projectile7.SetActive(true);
-            fired = true;
-        }
 
-        if (fired == true)
-        {
             Destroy(gameObject);
         }
     }
